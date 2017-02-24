@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:flex="http://www.springframework.org/schema/flex"
+    xmlns:secure="http://www.springframework.org/schema/security"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+        http://www.springframework.org/schema/flex http://www.springframework.org/schema/flex/spring-flex-1.5.xsd">
+
+
+    <flex:message-broker services-config-path="classpath:/META-INF/flex/services-config.xml" >
+ 	    <flex:secured>
+ 	    	<flex:secured-channel channel="shortPollingAmf" access="ROLE_USER" />
+ 	    </flex:secured>   
+	</flex:message-broker>
+
+</beans>
